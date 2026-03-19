@@ -19,7 +19,7 @@ describe('createMockInterpretationAdapter', () => {
 
   it('classifies modification requests', async () => {
     const adapter = createMockInterpretationAdapter();
-    const result = await adapter.classify('Let\'s make the horn rainbow instead', state);
+    const result = await adapter.classify("Let's make the horn rainbow instead", state);
     expect(result.intent).toBe(IntentType.MODIFICATION_REQUEST);
   });
 
@@ -31,19 +31,13 @@ describe('createMockInterpretationAdapter', () => {
 
   it('classifies audience response relay', async () => {
     const adapter = createMockInterpretationAdapter();
-    const result = await adapter.classify(
-      'Great, you want a pink castle in the clouds!',
-      state,
-    );
+    const result = await adapter.classify('Great, you want a pink castle in the clouds!', state);
     expect(result.intent).toBe(IntentType.AUDIENCE_RESPONSE_RELAY);
   });
 
   it('classifies transitions', async () => {
     const adapter = createMockInterpretationAdapter();
-    const result = await adapter.classify(
-      "Now let's figure out where our hero lives",
-      state,
-    );
+    const result = await adapter.classify("Now let's figure out where our hero lives", state);
     expect(result.intent).toBe(IntentType.TRANSITION);
   });
 

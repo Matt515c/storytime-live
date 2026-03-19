@@ -104,10 +104,7 @@ describe('createTemplateManager', () => {
   });
 
   it('returns null on API error', async () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn().mockResolvedValue({ ok: false, status: 500 }),
-    );
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 500 }));
 
     const manager = createTemplateManager();
     const result = await manager.preFabricate(createInitialSessionState(), 'key');

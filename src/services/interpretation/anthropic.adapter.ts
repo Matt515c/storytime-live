@@ -62,7 +62,9 @@ export function createAnthropicInterpretationAdapter(apiKey: string): Interpreta
       }
 
       const durationMs = performance.now() - startTime;
-      console.info(`[Interpretation] Classified as ${result.data.intent} in ${durationMs.toFixed(0)}ms`);
+      console.info(
+        `[Interpretation] Classified as ${result.data.intent} in ${durationMs.toFixed(0)}ms`,
+      );
 
       return result.data;
     } catch {

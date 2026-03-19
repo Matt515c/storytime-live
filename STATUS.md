@@ -13,28 +13,28 @@
 
 ## Build Task Progress
 
-| Task                                | Status    | Notes                                                            |
-| ----------------------------------- | --------- | ---------------------------------------------------------------- |
-| Task 0: Infrastructure & Repo Setup | Complete  | GitHub, Next.js 15, Vercel, CI/CD                               |
-| Task 1: Project Scaffold & Base UI  | Complete  | Fullscreen display, controls overlay, debug panel                |
-| Task 2: Mic Capture & Transcription | Complete  | getUserMedia mic-only, Deepgram streaming adapter                |
-| Task 3: AI Interpretation Layer     | Complete  | 6 intent types, Anthropic adapter, mock adapter                  |
-| Task 4: Image Generation Pipeline   | Complete  | fal.ai Flux Schnell adapter, prompt construction                 |
-| Task 5: Template Pre-Fabrication    | Complete  | Placeholder text replacement, latency optimization               |
-| Task 6: Session State Management    | Complete  | In-memory state, phase transitions, reference image chain        |
-| Task 7: End-to-End Integration      | Complete  | Full pipeline wired, 131+ tests passing                         |
-| Task 8: Latency Optimization        | Complete  | Latency tracker, pipeline metrics                                |
-| Task 9: Production Hardening        | Complete  | Error boundaries, env validation, security headers               |
+| Task                                | Status   | Notes                                                     |
+| ----------------------------------- | -------- | --------------------------------------------------------- |
+| Task 0: Infrastructure & Repo Setup | Complete | GitHub, Next.js 15, Vercel, CI/CD                         |
+| Task 1: Project Scaffold & Base UI  | Complete | Fullscreen display, controls overlay, debug panel         |
+| Task 2: Mic Capture & Transcription | Complete | getUserMedia mic-only, Deepgram streaming adapter         |
+| Task 3: AI Interpretation Layer     | Complete | 6 intent types, Anthropic adapter, mock adapter           |
+| Task 4: Image Generation Pipeline   | Complete | fal.ai Flux Schnell adapter, prompt construction          |
+| Task 5: Template Pre-Fabrication    | Complete | Placeholder text replacement, latency optimization        |
+| Task 6: Session State Management    | Complete | In-memory state, phase transitions, reference image chain |
+| Task 7: End-to-End Integration      | Complete | Full pipeline wired, 131+ tests passing                   |
+| Task 8: Latency Optimization        | Complete | Latency tracker, pipeline metrics                         |
+| Task 9: Production Hardening        | Complete | Error boundaries, env validation, security headers        |
 
 ## Infrastructure Status
 
-| Component             | Status     | Notes                                          |
-| --------------------- | ---------- | ---------------------------------------------- |
-| GitHub repo           | Active     | github.com/Matt515c/storytime-live             |
-| Vercel project        | Deployed   | Auto-deploys from master                       |
-| Domain                | Default    | Vercel subdomain                               |
+| Component             | Status     | Notes                                            |
+| --------------------- | ---------- | ------------------------------------------------ |
+| GitHub repo           | Active     | github.com/Matt515c/storytime-live               |
+| Vercel project        | Deployed   | Auto-deploys from master                         |
+| Domain                | Default    | Vercel subdomain                                 |
 | Environment variables | Configured | Placeholder keys — real keys needed for live use |
-| CI/CD pipeline        | Active     | GitHub Actions runs on push/PR                 |
+| CI/CD pipeline        | Active     | GitHub Actions runs on push/PR                   |
 
 ## Architecture Decisions
 

@@ -21,9 +21,7 @@ describe('ControlOverlay', () => {
   });
 
   it('renders Stop Session button when in session', () => {
-    render(
-      <ControlOverlay status="listening" onStartSession={vi.fn()} onStopSession={vi.fn()} />,
-    );
+    render(<ControlOverlay status="listening" onStartSession={vi.fn()} onStopSession={vi.fn()} />);
     expect(screen.getByTestId('stop-session-btn')).toBeInTheDocument();
     expect(screen.queryByTestId('start-session-btn')).not.toBeInTheDocument();
   });

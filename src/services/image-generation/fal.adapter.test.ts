@@ -51,15 +51,12 @@ describe('createFalAdapter', () => {
   });
 
   it('throws on API error', async () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn().mockResolvedValue({ ok: false, status: 500 }),
-    );
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 500 }));
 
     const adapter = createFalAdapter('test-key');
-    await expect(
-      adapter.generate({ prompt: 'test', width: 1024, height: 1024 }),
-    ).rejects.toThrow('fal.ai API error: 500');
+    await expect(adapter.generate({ prompt: 'test', width: 1024, height: 1024 })).rejects.toThrow(
+      'fal.ai API error: 500',
+    );
   });
 
   it('throws when no image returned', async () => {
@@ -72,9 +69,9 @@ describe('createFalAdapter', () => {
     );
 
     const adapter = createFalAdapter('test-key');
-    await expect(
-      adapter.generate({ prompt: 'test', width: 1024, height: 1024 }),
-    ).rejects.toThrow('No image returned from fal.ai');
+    await expect(adapter.generate({ prompt: 'test', width: 1024, height: 1024 })).rejects.toThrow(
+      'No image returned from fal.ai',
+    );
   });
 
   it('sends correct authorization header', async () => {

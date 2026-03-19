@@ -42,9 +42,7 @@ describe('createSessionStateManager', () => {
     const manager = createSessionStateManager();
     manager.updateSetting('a cloud kingdom');
     manager.updateSetting('with floating islands');
-    expect(manager.getState().settingDescription).toBe(
-      'a cloud kingdom; with floating islands',
-    );
+    expect(manager.getState().settingDescription).toBe('a cloud kingdom; with floating islands');
   });
 
   it('updates scene image', () => {

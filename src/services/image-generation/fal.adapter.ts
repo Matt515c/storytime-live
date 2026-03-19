@@ -19,17 +19,14 @@ export function createFalAdapter(apiKey: string): ImageGenerationAdapter {
       body.image_url = request.referenceImageUrl;
     }
 
-    const response = await fetch(
-      'https://fal.run/fal-ai/flux/schnell',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Key ${apiKey}`,
-        },
-        body: JSON.stringify(body),
+    const response = await fetch('https://fal.run/fal-ai/flux/schnell', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Key ${apiKey}`,
       },
-    );
+      body: JSON.stringify(body),
+    });
 
     if (!response.ok) {
       throw new Error(`fal.ai API error: ${response.status}`);

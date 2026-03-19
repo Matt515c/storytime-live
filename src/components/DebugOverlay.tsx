@@ -50,16 +50,13 @@ export function DebugOverlay({
           <span className="text-gray-400">Phase:</span> {currentPhase}
         </div>
         <div>
-          <span className="text-gray-400">Classification:</span>{' '}
-          {lastClassification ?? 'None'}
+          <span className="text-gray-400">Classification:</span> {lastClassification ?? 'None'}
         </div>
         <div>
-          <span className="text-gray-400">Template:</span>{' '}
-          {activeTemplate ? 'Active' : 'None'}
+          <span className="text-gray-400">Template:</span> {activeTemplate ? 'Active' : 'None'}
         </div>
         <div>
-          <span className="text-gray-400">Last Prompt:</span>{' '}
-          {lastPrompt ?? 'None'}
+          <span className="text-gray-400">Last Prompt:</span> {lastPrompt ?? 'None'}
         </div>
         <div>
           <span className="text-gray-400">Transcript:</span>

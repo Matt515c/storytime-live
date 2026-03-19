@@ -22,11 +22,11 @@ pnpm dev
 
 ## Required API Keys
 
-| Service | Key | Where to get it |
-|---------|-----|-----------------|
-| Deepgram | `DEEPGRAM_API_KEY` | [deepgram.com](https://deepgram.com) — Streaming speech-to-text |
+| Service   | Key                 | Where to get it                                                                 |
+| --------- | ------------------- | ------------------------------------------------------------------------------- |
+| Deepgram  | `DEEPGRAM_API_KEY`  | [deepgram.com](https://deepgram.com) — Streaming speech-to-text                 |
 | Anthropic | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com) — LLM for interpretation |
-| fal.ai | `FAL_API_KEY` | [fal.ai](https://fal.ai) — Fast image generation (Flux Schnell) |
+| fal.ai    | `FAL_API_KEY`       | [fal.ai](https://fal.ai) — Fast image generation (Flux Schnell)                 |
 
 ## Architecture
 
@@ -46,15 +46,15 @@ See [docs/product-spec.md](docs/product-spec.md) for the complete product specif
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start development server |
-| `pnpm build` | Production build |
-| `pnpm test` | Run tests |
-| `pnpm test:coverage` | Run tests with coverage |
-| `pnpm lint` | ESLint check |
-| `pnpm type-check` | TypeScript check |
-| `pnpm format` | Format code with Prettier |
+| Command              | Description               |
+| -------------------- | ------------------------- |
+| `pnpm dev`           | Start development server  |
+| `pnpm build`         | Production build          |
+| `pnpm test`          | Run tests                 |
+| `pnpm test:coverage` | Run tests with coverage   |
+| `pnpm lint`          | ESLint check              |
+| `pnpm type-check`    | TypeScript check          |
+| `pnpm format`        | Format code with Prettier |
 
 ## Deployment
 

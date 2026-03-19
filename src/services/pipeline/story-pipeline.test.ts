@@ -33,9 +33,7 @@ describe('StoryPipeline', () => {
   describe('CHARACTER_CREATION phase', () => {
     it('generates image on creative directive', async () => {
       const { pipeline, stateManager, onImageGenerated } = createTestPipeline();
-      await pipeline.processTranscript(
-        'Our hero is going to be a big red dragon with wings',
-      );
+      await pipeline.processTranscript('Our hero is going to be a big red dragon with wings');
       expect(onImageGenerated).toHaveBeenCalledOnce();
       expect(stateManager.getState().characterDescription).toContain('dragon');
     });
@@ -57,23 +55,15 @@ describe('StoryPipeline', () => {
   describe('Phase transitions', () => {
     it('transitions from CHARACTER_CREATION to SETTING_ESTABLISHMENT', async () => {
       const { pipeline, stateManager } = createTestPipeline();
-      await pipeline.processTranscript(
-        "Now let's figure out where our hero lives",
-      );
-      expect(stateManager.getState().currentPhase).toBe(
-        SessionPhase.SETTING_ESTABLISHMENT,
-      );
+      await pipeline.processTranscript("Now let's figure out where our hero lives");
+      expect(stateManager.getState().currentPhase).toBe(SessionPhase.SETTING_ESTABLISHMENT);
     });
 
     it('transitions from SETTING_ESTABLISHMENT to ACTIVE_STORYTELLING', async () => {
       const { pipeline, stateManager } = createTestPipeline();
       stateManager.updatePhase(SessionPhase.SETTING_ESTABLISHMENT);
-      await pipeline.processTranscript(
-        "Now let's begin the adventure!",
-      );
-      expect(stateManager.getState().currentPhase).toBe(
-        SessionPhase.ACTIVE_STORYTELLING,
-      );
+      await pipeline.processTranscript("Now let's begin the adventure!");
+      expect(stateManager.getState().currentPhase).toBe(SessionPhase.ACTIVE_STORYTELLING);
     });
   });
 
@@ -92,9 +82,7 @@ describe('StoryPipeline', () => {
       await pipeline.processTranscript('What does our hero see?');
       expect(stateManager.getState().activeTemplate).not.toBeNull();
 
-      await pipeline.processTranscript(
-        'Great, you want a big pink castle!',
-      );
+      await pipeline.processTranscript('Great, you want a big pink castle!');
       expect(stateManager.getState().activeTemplate).toBeNull();
       expect(onImageGenerated).toHaveBeenCalled();
     });
@@ -103,9 +91,7 @@ describe('StoryPipeline', () => {
       const { pipeline, stateManager, onImageGenerated } = createTestPipeline();
       stateManager.updatePhase(SessionPhase.ACTIVE_STORYTELLING);
 
-      await pipeline.processTranscript(
-        'Great, you want a flying carpet!',
-      );
+      await pipeline.processTranscript('Great, you want a flying carpet!');
       expect(onImageGenerated).toHaveBeenCalled();
     });
   });
@@ -118,9 +104,7 @@ describe('StoryPipeline', () => {
       const scene1 = stateManager.getState().currentSceneImage;
       expect(scene1).not.toBeNull();
 
-      await pipeline.processTranscript(
-        "Now let's figure out where our hero lives",
-      );
+      await pipeline.processTranscript("Now let's figure out where our hero lives");
       await pipeline.processTranscript('The character is in a cloud kingdom');
       const scene2 = stateManager.getState().currentSceneImage;
       expect(scene2).not.toBeNull();

@@ -53,24 +53,15 @@ describe('createAnthropicPromptConstructor', () => {
     );
 
     const constructor = createAnthropicPromptConstructor('test-key');
-    const result = await constructor.constructPrompt(
-      'a red dragon',
-      createInitialSessionState(),
-    );
+    const result = await constructor.constructPrompt('a red dragon', createInitialSessionState());
     expect(result).toContain('dragon');
   });
 
   it('returns fallback on API error', async () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn().mockResolvedValue({ ok: false, status: 500 }),
-    );
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 500 }));
 
     const constructor = createAnthropicPromptConstructor('test-key');
-    const result = await constructor.constructPrompt(
-      'a red dragon',
-      createInitialSessionState(),
-    );
+    const result = await constructor.constructPrompt('a red dragon', createInitialSessionState());
     expect(result).toContain('a red dragon');
     expect(result).toContain('storybook illustration');
   });

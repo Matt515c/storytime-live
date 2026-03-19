@@ -66,10 +66,7 @@ export function createSessionStateManager(): SessionStateManager {
   const addToHistory = (prompt: string, imageUrl: string): void => {
     state = {
       ...state,
-      generationHistory: [
-        ...state.generationHistory,
-        { prompt, imageUrl, timestamp: Date.now() },
-      ],
+      generationHistory: [...state.generationHistory, { prompt, imageUrl, timestamp: Date.now() }],
     };
   };
 

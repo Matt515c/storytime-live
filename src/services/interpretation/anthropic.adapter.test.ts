@@ -42,10 +42,7 @@ describe('createAnthropicInterpretationAdapter', () => {
   });
 
   it('returns fallback on API error', async () => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn().mockResolvedValue({ ok: false, status: 500 }),
-    );
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 500 }));
 
     const adapter = createAnthropicInterpretationAdapter('test-key');
     const result = await adapter.classify('test', createInitialSessionState());

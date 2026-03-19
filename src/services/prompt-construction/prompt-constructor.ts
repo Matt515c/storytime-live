@@ -6,7 +6,7 @@ export interface PromptConstructor {
 }
 
 const ART_STYLE_SUFFIX =
-  'storybook illustration style, vibrant colors, whimsical, children\'s book art, soft lighting, painterly quality';
+  "storybook illustration style, vibrant colors, whimsical, children's book art, soft lighting, painterly quality";
 
 export function createAnthropicPromptConstructor(apiKey: string): PromptConstructor {
   const constructPrompt = async (

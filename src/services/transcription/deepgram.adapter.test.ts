@@ -28,7 +28,10 @@ beforeEach(() => {
     vi.fn(() => mockWsInstance),
   );
   Object.defineProperty(globalThis, 'WebSocket', {
-    value: Object.assign(vi.fn(() => mockWsInstance), { OPEN: 1 }),
+    value: Object.assign(
+      vi.fn(() => mockWsInstance),
+      { OPEN: 1 },
+    ),
     writable: true,
   });
 
