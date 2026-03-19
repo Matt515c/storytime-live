@@ -1,9 +1,12 @@
 import { z } from 'zod/v4';
 
 const ServerEnvSchema = z.object({
-  DEEPGRAM_API_KEY: z.string().min(1, 'DEEPGRAM_API_KEY is required'),
+  ELEVENLABS_API_KEY: z.string().min(1, 'ELEVENLABS_API_KEY is required'),
   ANTHROPIC_API_KEY: z.string().min(1, 'ANTHROPIC_API_KEY is required'),
-  FAL_API_KEY: z.string().min(1, 'FAL_API_KEY is required'),
+  REPLICATE_API_TOKEN: z.string().min(1, 'REPLICATE_API_TOKEN is required'),
+  // Legacy adapters — optional
+  DEEPGRAM_API_KEY: z.string().optional(),
+  FAL_API_KEY: z.string().optional(),
 });
 
 const ClientEnvSchema = z.object({

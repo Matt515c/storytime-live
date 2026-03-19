@@ -32,6 +32,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'replicate.delivery',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.replicate.delivery',
+      },
+      {
+        protocol: 'https',
         hostname: 'fal.media',
       },
       {
