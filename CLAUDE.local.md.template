@@ -1,0 +1,11 @@
+# Personal Preferences (Not Committed)
+
+## My Workflow
+- I prefer seeing the test approach before implementation
+- When explaining architectural decisions, relate them back to latency impact
+- If something can be done in parallel, call it out explicitly
+
+## Communication Style
+- Be direct — skip preamble
+- When proposing alternatives, lead with your recommendation and why
+- If I'm about to make a mistake, say so clearly before I proceed
