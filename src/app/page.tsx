@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from 'react';
 
 import { ControlOverlay } from '@/components/ControlOverlay';
 import { DebugOverlay } from '@/components/DebugOverlay';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SessionDisplay } from '@/components/SessionDisplay';
 import { useSession } from '@/hooks/use-session';
 import type { SessionStatus } from '@/types/session';
@@ -71,7 +72,7 @@ export default function Home() {
   void setTranscript;
 
   return (
-    <>
+    <ErrorBoundary>
       <SessionDisplay
         imageUrl={sessionState.currentSceneImage}
         isLoading={sessionState.sessionStatus === 'generating'}
@@ -88,6 +89,6 @@ export default function Home() {
         lastPrompt={lastPrompt}
         transcript={transcript}
       />
-    </>
+    </ErrorBoundary>
   );
 }
