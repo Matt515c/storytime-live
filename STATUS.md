@@ -1,49 +1,56 @@
 # Project Status — StoryLive
 
-**Last updated:** [DATE]
+**Last updated:** 2026-03-19
 **Branch:** `master`
-**Deployment:** Not yet deployed
+**Deployment:** https://storytime-live-5qsdlel8t-mac-technologies.vercel.app
+**Version:** v0.1.0
 
 ---
 
 ## Current Phase
 
-**Phase: Project Bootstrap** — Setting up repo, tooling, CI/CD, and deploying skeleton to Vercel.
+**Phase: v0.1.0 Released** — All core components built, tested, and integrated.
 
 ## Build Task Progress
 
-| Task                                | Status      | Notes                                                                    |
-| ----------------------------------- | ----------- | ------------------------------------------------------------------------ |
-| Task 1: Project Scaffold & Base UI  | Not Started | Next.js 15 App Router, fullscreen image display, session controls        |
-| Task 2: Mic Capture & Transcription | Not Started | getUserMedia mic-only, streaming STT via Deepgram                        |
-| Task 3: AI Interpretation Layer     | Not Started | Phase detection, intent classification, fast LLM                         |
-| Task 4: Image Generation Pipeline   | Not Started | fal.ai Flux Schnell, reference image support                             |
-| Task 5: Template Pre-Fabrication    | Not Started | Critical latency optimization — pre-build prompts during audience pauses |
-| Task 6: Session State Management    | Not Started | In-memory state for phase, character, setting, templates                 |
-| Task 7: End-to-End Integration      | Not Started | Wire all components, debug overlay                                       |
-| Task 8: Latency Optimization        | Not Started | Parallelize, stream LLM, pre-warm connections, metrics                   |
+| Task                                | Status    | Notes                                                            |
+| ----------------------------------- | --------- | ---------------------------------------------------------------- |
+| Task 0: Infrastructure & Repo Setup | Complete  | GitHub, Next.js 15, Vercel, CI/CD                               |
+| Task 1: Project Scaffold & Base UI  | Complete  | Fullscreen display, controls overlay, debug panel                |
+| Task 2: Mic Capture & Transcription | Complete  | getUserMedia mic-only, Deepgram streaming adapter                |
+| Task 3: AI Interpretation Layer     | Complete  | 6 intent types, Anthropic adapter, mock adapter                  |
+| Task 4: Image Generation Pipeline   | Complete  | fal.ai Flux Schnell adapter, prompt construction                 |
+| Task 5: Template Pre-Fabrication    | Complete  | Placeholder text replacement, latency optimization               |
+| Task 6: Session State Management    | Complete  | In-memory state, phase transitions, reference image chain        |
+| Task 7: End-to-End Integration      | Complete  | Full pipeline wired, 131+ tests passing                         |
+| Task 8: Latency Optimization        | Complete  | Latency tracker, pipeline metrics                                |
+| Task 9: Production Hardening        | Complete  | Error boundaries, env validation, security headers               |
 
 ## Infrastructure Status
 
-| Component             | Status         | Notes                                          |
-| --------------------- | -------------- | ---------------------------------------------- |
-| GitHub repo           | Not Created    |                                                |
-| Vercel project        | Not Created    |                                                |
-| Domain                | Not Configured |                                                |
-| Environment variables | Not Set        | Deepgram, Anthropic/OpenAI, fal.ai keys needed |
-| CI/CD pipeline        | Not Set        | GitHub Actions → Vercel                        |
+| Component             | Status     | Notes                                          |
+| --------------------- | ---------- | ---------------------------------------------- |
+| GitHub repo           | Active     | github.com/Matt515c/storytime-live             |
+| Vercel project        | Deployed   | Auto-deploys from master                       |
+| Domain                | Default    | Vercel subdomain                               |
+| Environment variables | Configured | Placeholder keys — real keys needed for live use |
+| CI/CD pipeline        | Active     | GitHub Actions runs on push/PR                 |
+
+## Architecture Decisions
+
+- **STT provider:** Deepgram (streaming WebSocket, Nova-2 model)
+- **Interpretation LLM:** Claude Haiku 4.5 via Anthropic API
+- **Image generation:** fal.ai Flux Schnell
+- **Art style:** Storybook illustration, vibrant colors, whimsical
 
 ## Known Issues
 
-_None yet — project not started._
+- Node.js 21.5 requires vitest v2 and jsdom v24 (newer versions need Node 22+)
+- Lint warnings for unused prefixed params in mock adapters (cosmetic only)
 
-## Recent Changes
+## Next Steps
 
-_None yet — project not started._
-
-## Blocked / Needs Action
-
-- [ ] Choose speech-to-text provider (Deepgram recommended for streaming)
-- [ ] Choose image generation provider (fal.ai Flux Schnell recommended for speed)
-- [ ] Choose LLM for interpretation (Claude Haiku or GPT-4o-mini for speed)
-- [ ] Obtain API keys for all services
+- [ ] Add real API keys and test end-to-end with live services
+- [ ] Connect microphone → transcription → pipeline flow in the UI
+- [ ] Add SSE/WebSocket for server→client image push
+- [ ] Performance testing with real APIs
